@@ -99,6 +99,9 @@ main {
   background: white;
   border-radius: 3px;
   cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 1em;
 }
 
 .btn:hover,
