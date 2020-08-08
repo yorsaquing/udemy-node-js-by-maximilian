@@ -5,11 +5,11 @@
         <%- include('../includes/navigation.ejs') %>
         <main>
             <% if (products.length > 0) { %>
-                <p>Total Price: <%= totalPrice %></p>
                 <ul>
                 <% for (let product of products)  { %>
                     <li>
-                        <p><%= product.title %> (<%= product.qty %>)</p>
+                        <h4><%= product.title %></h4>
+                        <p>Quantity: (<%= product.cartItem.quantity %>)</p>
                         <form action="/cart-delete-item" method="POST">
                             <input type="hidden" name="id" value="<%= product.id %>" />
                             <input type="hidden" name="price" value="<%= product.price %>" />
@@ -18,6 +18,9 @@
                     </li>
                 <% } %>
                 </ul>
+                <form action="/checkout" method="POST">
+                    <button class="btn" type="submit">Checkout</button>
+                </form>
             <% } else { %>
                <p>Cart is empty</p>  
             <% } %>

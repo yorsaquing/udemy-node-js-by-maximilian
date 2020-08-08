@@ -1,11 +1,8 @@
-const mysql = require('mysql2')
+const Sequelize = require('sequelize')
 
-// Pool allows us to run multiple connections
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'nodejs'
+const sequelize = new Sequelize('nodejs', 'root', 'root', {
+    dialect: 'mysql',
+    host: 'localhost'
 })
 
-module.exports = pool.promise()
+module.exports = sequelize

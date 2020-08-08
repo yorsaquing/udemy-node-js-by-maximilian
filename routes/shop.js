@@ -5,7 +5,7 @@ const {
     getProducts,
     getCart,
     getOrders,
-    getCheckout,
+    postCheckout,
     getProduct,
     postCart,
     postCartDeleteItem
@@ -25,7 +25,7 @@ router.post('/cart', postCart)
 
 router.get('/orders', getOrders);
 
-router.get('/checkout', getCheckout);
+router.post('/checkout', postCheckout);
 
 router.post('/cart-delete-item', postCartDeleteItem)
 
